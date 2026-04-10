@@ -57,5 +57,5 @@ export const plans = [
 
 export function formatPrice(plan: typeof plans[0]) {
     if (plan.price === null) return "Próximamente";
-    return `$${(plan.price as number).toLocaleString("es-MX")} ${plan.currency}/${plan.period}`;
+return `$${new Intl.NumberFormat("es-MX").format(plan.price)} ${plan.currency}/${plan.period}`;
 }
