@@ -35,22 +35,23 @@ export default function Landing() {
       <Nav dark />
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-plum via-plum-dark to-plum-darker py-24 px-6 text-center">
-        <div className="absolute -top-32 -right-20 w-[340px] h-[340px] rounded-full bg-violet/15 blur-3xl" />
-        <div className="absolute -bottom-20 -left-16 w-[260px] h-[260px] rounded-full bg-violet-hover/15 blur-3xl" />
+      <section className="relative overflow-hidden bg-gradient-to-b from-plum via-plum-dark to-plum-darker py-24 px-6 text-center">
+        {/* Orbs decorativos */}
+        <div className="absolute -top-32 -right-20 w-[340px] h-[340px] rounded-full bg-gradient-radial from-violet/20 to-transparent blur-3xl" />
+        <div className="absolute -bottom-20 -left-16 w-[260px] h-[260px] rounded-full bg-gradient-radial from-violet-hover/20 to-transparent blur-3xl" />
 
         <div className="relative z-10 max-w-[700px] mx-auto">
           <Badge>Plataforma ecommerce SaaS</Badge>
-
+          
           <h1 className="font-display font-extrabold text-white text-[clamp(36px,6vw,58px)] leading-tight tracking-tight mt-5 mb-5">
             El comercio electrónico{" "}
             <span className="text-violet-hover">hecho para México</span>
           </h1>
-
+          
           <p className="text-muted text-lg leading-relaxed max-w-[520px] mx-auto mb-9">
             {brand.description}
           </p>
-
+          
           <a
             href={brand.appUrl}
             className="inline-block bg-violet hover:bg-violet-hover hover:-translate-y-0.5 text-white px-8 py-3.5 rounded-lg font-bold transition-all shadow-[0_4px_24px_rgba(124,79,212,0.35)]"
@@ -77,7 +78,7 @@ export default function Landing() {
             Todo lo que necesitas para vender en línea
           </h2>
         </div>
-
+        
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((f) => (
             <div
@@ -85,8 +86,12 @@ export default function Landing() {
               className="bg-warm-white border border-tint rounded-2xl p-7 hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(124,79,212,0.08)] transition-all"
             >
               <div className="text-[32px] mb-3.5">{f.icon}</div>
-              <h3 className="text-plum text-lg font-bold mb-2">{f.title}</h3>
-              <p className="text-body text-sm leading-relaxed">{f.description}</p>
+              <h3 className="text-plum text-lg font-bold mb-2">
+                {f.title}
+              </h3>
+              <p className="text-body text-sm leading-relaxed">
+                {f.description}
+              </p>
             </div>
           ))}
         </div>
@@ -100,14 +105,16 @@ export default function Landing() {
             Tres pasos para empezar a vender
           </h2>
         </div>
-
+        
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           {steps.map((s) => (
             <div key={s.number}>
               <div className="w-14 h-14 rounded-full bg-gradient-to-br from-violet to-violet-hover text-white text-xl font-extrabold font-display flex items-center justify-center mx-auto mb-4">
                 {s.number}
               </div>
-              <h3 className="text-plum text-lg font-bold mb-2">{s.title}</h3>
+              <h3 className="text-plum text-lg font-bold mb-2">
+                {s.title}
+              </h3>
               <p className="text-body text-sm leading-relaxed max-w-[260px] mx-auto">
                 {s.description}
               </p>
@@ -116,7 +123,7 @@ export default function Landing() {
         </div>
       </Section>
 
-      {/* Screenshot placeholder */}
+      {/* Screenshot */}
       <Section>
         <div className="text-center mb-8">
           <Badge>Plataforma</Badge>
@@ -124,20 +131,17 @@ export default function Landing() {
             Un dashboard pensado para ti
           </h2>
         </div>
-
+        
         <div className="bg-gradient-to-br from-plum to-plum-dark rounded-2xl p-12 text-center text-muted min-h-[320px] flex flex-col items-center justify-center border border-violet/20">
           <div className="text-5xl mb-4 opacity-50">📸</div>
           <div className="text-base font-semibold text-white mb-2">
             Screenshots del Dashboard & Storefront
           </div>
-          <div className="text-[13px] max-w-[400px]">
-            Reemplaza este bloque con capturas reales de tu producto.
-          </div>
         </div>
       </Section>
 
-      {/* CTA / Waitlist */}
-      <section className="bg-gradient-to-br from-plum to-plum-dark py-20 px-6 text-center">
+      {/* CTA */}
+      <section className="bg-gradient-to-b from-plum to-plum-dark py-20 px-6 text-center">
         <h2 className="font-display font-extrabold text-4xl text-white mb-4 tracking-tight">
           ¿Listo para vender en línea?
         </h2>
@@ -150,21 +154,22 @@ export default function Landing() {
             ¡Listo! Te avisaremos cuando lancemos.
           </div>
         ) : (
-          <div className="flex gap-2 justify-center flex-wrap max-w-[440px] mx-auto">
+          <form onSubmit={handleWaitlist} className="flex gap-2 justify-center flex-wrap max-w-[440px] mx-auto">
             <input
               type="email"
               placeholder="tu@email.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="flex-1 min-w-[200px] px-4 py-3.5 rounded-lg text-[15px] outline-none text-plum"
+              required
+              className="flex-1 min-w-[200px] px-4 py-3.5 rounded-lg text-[15px] outline-none"
             />
             <button
-              onClick={handleWaitlist}
+              type="submit"
               className="bg-violet hover:bg-violet-hover text-white px-7 py-3.5 rounded-lg text-[15px] font-bold cursor-pointer transition-colors shadow-[0_4px_24px_rgba(124,79,212,0.35)]"
             >
               Avísame
             </button>
-          </div>
+          </form>
         )}
       </section>
 
