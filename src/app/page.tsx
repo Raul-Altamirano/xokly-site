@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import DashboardCarousel from "@/app/DashboardCarousel";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import { Section, Badge } from "@/components/UI";
@@ -29,6 +30,33 @@ export default function Landing() {
       setEmail("");
     }
   };
+
+    const dashboardImages = [
+    {
+      src: "/dashboard/dash-analitycs.jpg",
+      alt: "Vista general del dashboard de Xokly",
+      title: "Panel principal",
+      description: "Resumen del negocio, métricas y actividad reciente.",
+    },
+    // {
+    //   src: "/dashboard/02-products.png",
+    //   alt: "Módulo de productos de Xokly",
+    //   title: "Gestión de productos",
+    //   description: "Administra catálogo, variantes, stock e imágenes.",
+    // },
+    // {
+    //   src: "/dashboard/03-orders.png",
+    //   alt: "Módulo de pedidos de Xokly",
+    //   title: "Pedidos y ventas",
+    //   description: "Consulta órdenes, estados y seguimiento comercial.",
+    // },
+    // {
+    //   src: "/dashboard/04-storefront.png",
+    //   alt: "Storefront de Xokly",
+    //   title: "Storefront",
+    //   description: "Experiencia de compra clara y lista para convertir.",
+    // },
+  ];
 
   return (
     <div className="bg-white min-h-screen">
@@ -117,6 +145,7 @@ export default function Landing() {
       </Section>
 
       {/* Screenshot placeholder */}
+      {/* Screenshot carousel */}
       <Section>
         <div className="text-center mb-8">
           <Badge>Plataforma</Badge>
@@ -125,15 +154,7 @@ export default function Landing() {
           </h2>
         </div>
 
-        <div className="bg-gradient-to-br from-plum to-plum-dark rounded-2xl p-12 text-center text-muted min-h-[320px] flex flex-col items-center justify-center border border-violet/20">
-          <div className="text-5xl mb-4 opacity-50">📸</div>
-          <div className="text-base font-semibold text-white mb-2">
-            Screenshots del Dashboard & Storefront
-          </div>
-          <div className="text-[13px] max-w-[400px]">
-            Reemplaza este bloque con capturas reales de tu producto.
-          </div>
-        </div>
+        <DashboardCarousel items={dashboardImages} />
       </Section>
 
       {/* CTA / Waitlist */}
