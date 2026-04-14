@@ -38,24 +38,24 @@ export default function Landing() {
       title: "Panel principal",
       description: "Resumen del negocio, métricas y actividad reciente.",
     },
-    // {
-    //   src: "/dashboard/02-products.png",
-    //   alt: "Módulo de productos de Xokly",
-    //   title: "Gestión de productos",
-    //   description: "Administra catálogo, variantes, stock e imágenes.",
-    // },
-    // {
-    //   src: "/dashboard/03-orders.png",
-    //   alt: "Módulo de pedidos de Xokly",
-    //   title: "Pedidos y ventas",
-    //   description: "Consulta órdenes, estados y seguimiento comercial.",
-    // },
-    // {
-    //   src: "/dashboard/04-storefront.png",
-    //   alt: "Storefront de Xokly",
-    //   title: "Storefront",
-    //   description: "Experiencia de compra clara y lista para convertir.",
-    // },
+    {
+      src: "/dashboard/dashboard-productos.jpg",
+      alt: "Módulo de productos de Xokly",
+      title: "Gestión de productos",
+      description: "Administra catálogo, variantes, stock e imágenes.",
+    },
+    {
+      src: "/dashboard/dashboard-pedidos.jpg",
+      alt: "Módulo de pedidos de Xokly",
+      title: "Pedidos y ventas",
+      description: "Consulta órdenes, estados y seguimiento comercial.",
+    },
+    {
+      src: "/dashboard/cliente-storefront.jpg",
+      alt: "Storefront de Xokly",
+      title: "Clientes y storefront",
+      description: "Experiencia de compra clara y lista para convertir.",
+    },
   ];
 
   return (
